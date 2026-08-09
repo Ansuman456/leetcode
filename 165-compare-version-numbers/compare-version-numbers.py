@@ -16,14 +16,14 @@ class Solution:
         if(i==len(x) and j<len(y)): # if y has more digits
             while(j<len(y)):  # check non zero in remaining digits
                 if(int(y[j])!=0):
-                    return -1
+                    return -1 # y has larger digit
                 j+=1
             return 0
 
         elif(j==len(y) and i<len(x)): # if x has more digits
             while(i<len(x)): # check non zero in remaining digits
                 if(int(x[i])!=0):
-                    return 1
+                    return 1   # x has larger digit
                 i+=1
             return 0
         elif(i==len(x) and j==len(y)):
