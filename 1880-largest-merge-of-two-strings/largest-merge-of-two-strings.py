@@ -5,6 +5,7 @@ class Solution:
         merge=[]
         while(i<len(word1) and j<len(word2)):
             if (word1[i:] >= word2[j:]): # keep lexicographically larger substring
+            # instead of word1[i] >= word2[j] we have choose word1[i:] >= word2[j:] cause aa,ab [word1[i]==word2[j]] should merge to "abaa" not "aaab", thats why compare the substrings, not just current chars
                 merge.append(word1[i])
                 i+=1
             else:
