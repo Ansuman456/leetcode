@@ -4,7 +4,7 @@ class Solution:
         j=0
         merge=[]
         while(i<len(word1) and j<len(word2)):
-            if (word1[i:] > word2[j:]): # keep lexicographically larger substring
+            if (word1[i:] >= word2[j:]): # keep lexicographically larger substring
                 merge.append(word1[i])
                 i+=1
             else:
