@@ -22,6 +22,8 @@ class Solution:
                 # move one step towards centre
                 s[k], s[k + 1] = s[k + 1], s[k]
                 count += 1
+                # here we dont do i+=1 and j-=1 so that, the new s[i] after swapping can also get to be processed, instead of wrongly skipping that and do i+=1 
+                
             else:
                 # Move matching character to position j(correct place)
                 while k < j:
