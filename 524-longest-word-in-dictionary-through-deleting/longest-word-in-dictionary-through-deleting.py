@@ -8,10 +8,10 @@ class Solution:
                 if(s[i]==t[j]):
                     j+=1  # increment only on matching
                 i+=1 # increment every iteration
-            if(j==len(t) and len(t)>=len(longest)):
-                if(len(t)==len(longest) and longest>t): # we choose lexographically smaller
+            if(j==len(t) and len(t)>=len(longest)): # j reached end of t
+                if(len(t)==len(longest) and longest>t): # we choose lexographically smaller if len(t)==len(longest)
                     longest=t
                 elif(len(t)>len(longest)):
-                    longest=t
+                    longest=t 
         return longest
 
