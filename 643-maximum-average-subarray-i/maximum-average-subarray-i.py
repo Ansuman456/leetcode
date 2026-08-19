@@ -5,12 +5,12 @@ class Solution:
         ans=float('-inf') # result
         sum=0 # window
         for right in range(len(nums)):
-            sum+=nums[right]
+            sum+=nums[right] #expand
 
             if(right-left+1==k): #works after high>=k
                 ans=max(ans,sum/k) # store avg before shrinking
 
-                sum-=nums[left]
+                sum-=nums[left] # shrink
                 left+=1
         
         return ans
