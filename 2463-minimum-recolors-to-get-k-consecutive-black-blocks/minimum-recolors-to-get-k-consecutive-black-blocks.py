@@ -2,7 +2,7 @@ class Solution:
     def minimumRecolors(self, blocks: str, k: int) -> int:
         left=0
         ans=200
-        white=0
+        white=0 # no of whites in the window
         for right in range(len(blocks)):
             if(blocks[right]=='W'): # expand
                 white+=1
