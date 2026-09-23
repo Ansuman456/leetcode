@@ -21,8 +21,6 @@ class Solution:
                 # Check both possibilities: skip left or skip right
                 check = isPalindrome(i + 1, j) or isPalindrome(i, j - 1)
                 return check
-            else:  # mismatch and no skip left
-                return False
-
+            
         return check
                 
