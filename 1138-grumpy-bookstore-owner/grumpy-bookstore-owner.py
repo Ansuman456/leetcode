@@ -6,7 +6,7 @@ class Solution:
         for right in range(len(customers)):
             if(grumpy[right]==1): #add into unsatisfied 
                 unsatisfied+=customers[right]       
-            #shrink
+            
             if(right-left+1==minutes):
                 # store before shrinking
                 ans=max(ans,unsatisfied)
@@ -15,11 +15,10 @@ class Solution:
                     unsatisfied-=customers[left]
                 left+=1
 
-        # now ans contains most unsatisfied customers window
+        # now ans contains most unsatisfied customers window which we will add in total satisfied customers, making the owner ungrumpy for that window
         for i in range(len(customers)):
             if(grumpy[i]==0):
                 ans+=customers[i]
 
         return ans
-
 
