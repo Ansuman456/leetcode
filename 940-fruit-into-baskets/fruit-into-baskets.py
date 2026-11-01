@@ -7,7 +7,7 @@ class Solution:
         left=0
         for right in range(len(fruits)):
             d[fruits[right]]=d.get(fruits[right],0)+1
-            while(len(d)>k):
+            while(len(d)>k): # shrink until map dont have no of distint char <= k
                 d[fruits[left]]=d.get(fruits[left])-1
                 if(d[fruits[left]]==0):
                     del d[fruits[left]]
