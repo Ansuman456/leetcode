@@ -11,7 +11,7 @@ class Solution:
         while low <= high:
             mid = low + (high - low) // 2
 
-            if nums[mid] >= target:
+            if nums[mid] >= target: #store and search in left for first occ
                 if nums[mid] == target:
                     first = mid
                 high = mid - 1
@@ -26,10 +26,10 @@ class Solution:
         while low <= high:
             mid = low + (high - low) // 2
 
-            if nums[mid] > target:
+            if nums[mid] > target:    #store and search in left 
                 last = mid
                 high = mid - 1
-            else:
+            else:   #search in right
                 low = mid + 1
 
         # Generate target indices
