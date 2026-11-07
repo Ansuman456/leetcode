@@ -7,9 +7,10 @@ class Solution:
         high=len(nums)-1
         while(low<=high):
             mid=low+(high - low)//2
-            if(nums[mid] >= target):   #search in left
-                if(nums[mid]==target):
-                    firstocc=min(firstocc,mid)
+            if(nums[mid]==target): #search in left for first occurance
+                firstocc=min(firstocc,mid)
+                high = mid - 1
+            elif(nums[mid] > target):   #search in left
                 high = mid - 1
             else:    #search in right
                 low = mid + 1
@@ -18,10 +19,10 @@ class Solution:
         high=len(nums)-1
         while(low<=high):
             mid=low+(high - low)//2
-
-            if(nums[mid] <= target):     #search in right
-                if(nums[mid] == target):
-                    lastocc = max(lastocc, mid)
+            if(nums[mid]==target):  #search in right for last occurance
+                lastocc = max(lastocc, mid)
+                low = mid + 1
+            elif(nums[mid] < target):     #search in right
                 low = mid + 1
             else:   #search in left
                 high = mid - 1
