@@ -1,6 +1,5 @@
 class Solution:
     def numSmallerByFrequency(self, queries: List[str], words: List[str]) -> List[int]:
-
         def getFrequency(s):
             smallest = min(s)
             return s.count(smallest)
