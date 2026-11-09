@@ -12,7 +12,7 @@ class Solution:
             return False
 
         low = min(ranks)
-        high = min(ranks) * cars * cars
+        high = max(ranks) * cars * cars
         ans = high
 
         while low <= high:
