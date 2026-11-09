@@ -1,3 +1,4 @@
+import math
 class Solution:
     def minEatingSpeed(self, piles, h):
 
@@ -5,7 +6,7 @@ class Solution:
             hours = 0
 
             for pile in piles:
-                hours += (pile + k - 1) // k
+                hours += math.ceil(pile / k)
 
             return hours
 
