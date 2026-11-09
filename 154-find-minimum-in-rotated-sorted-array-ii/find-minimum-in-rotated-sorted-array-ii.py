@@ -8,10 +8,10 @@ class Solution:
             mid = low + (high - low) // 2
 
             if nums[mid] < nums[high]:   # right side is sorted
-                high = mid
+                high = mid  #search in left
 
             elif nums[mid] > nums[high]:   # left side is sorted
-                low = mid + 1
+                low = mid + 1  #search in right
 
             else:  # Ambiguous case: cannot identify sorted half
                 high -= 1
