@@ -9,16 +9,18 @@ class Solution:
 
             return hours
 
-        start = 1
-        end = max(piles)
+        low = 1
+        high = max(piles)
+        ans = -1
 
-        while start <= end:
-            mid = (start + end) // 2
+        while low <= high:
+            mid = low + (high - low) // 2
 
-            if check(mid) > h:
-                start = mid + 1
+            if check(mid) <= h:  # Valid speed, search left
+                ans = mid
+                high = mid - 1 #decrease speed
 
-            else:
-                end = mid - 1
+            else:  # Invalid speed, search right
+                low = mid + 1   #increase speed
 
-        return start
+        return ans
