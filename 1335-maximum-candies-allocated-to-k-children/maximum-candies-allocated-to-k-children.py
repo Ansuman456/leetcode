@@ -3,10 +3,10 @@ class Solution:
         if(sum(candies)<k):
             return 0
         
-        def check(noOfCandies,arr):
+        def check(noOfCandies):
             i=0
             noOfChildren=0
-            for x in arr:
+            for x in candies:
                 noOfChildren += x // noOfCandies
             return noOfChildren
 
@@ -15,7 +15,7 @@ class Solution:
         ans=0
         while(low<=high):
             mid=low+(high-low)//2
-            if(check(mid,candies.copy())>=k): # valid no of children -> increase noOfCandies
+            if(check(mid)>=k): # valid no of children -> increase noOfCandies
                 ans=mid
                 low=mid+1
             else:
