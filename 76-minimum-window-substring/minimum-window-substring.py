@@ -27,8 +27,8 @@ class Solution:
                 if(s[left] in d and d[s[left]]<0): #extra char
                     d[s[left]]+=1
                 elif(s[left] in d and d[s[left]]==0): #not extra but char in the map going out of the window
-                    d[s[left]] += 1
-                    count += 1 # now count is no longer 0, d[s[left]]>1
+                    d[s[left]] += 1  # now d[s[left]]=1
+                    count += 1 # now count is no longer 0, d[s[left]]>0
                 window.remove(s[left])
                 left+=1
         return "".join(ans)
