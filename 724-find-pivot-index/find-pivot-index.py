@@ -2,7 +2,6 @@ class Solution:
     def pivotIndex(self, nums: list[int]) -> int:
         leftSum=0
         rightSum=0
-        prefixsum=[0]*len(nums)
         total=sum(nums)
 
         for i in range(0,len(nums)):
