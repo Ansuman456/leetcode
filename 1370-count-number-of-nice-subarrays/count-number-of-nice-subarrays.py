@@ -1,23 +1,23 @@
 class Solution:
     def numberOfSubarrays(self, nums: list[int], k: int) -> int:
+        for i in range(len(nums)):
+            if(nums[i]%2==0):
+                nums[i]=0
+            else:
+                nums[i]=1
+         # if sum of sub array =k then no of 1's =k then no of odd's =k
 
-        def atMost(k):
-            left = 0
-            odds = 0
-            ans = 0
+        prefixSum = 0
+        count = 0
+        freq = {0: 1}
+       
+        for ele in nums:
+            prefixSum += ele
+            remaining = prefixSum - k
 
-            for right in range(len(nums)):
+            if remaining in freq:  #subarray with sum k found
+                count += freq[remaining]
 
-                if nums[right] % 2 != 0:
-                    odds += 1
-
-                while odds > k:
-                    if nums[left] % 2 != 0:
-                        odds -= 1
-                    left += 1
-
-                ans += right - left + 1
-
-            return ans
-
-        return atMost(k) - atMost(k - 1)
+            freq[prefixSum] = freq.get(prefixSum, 0) + 1
+            
+        return count
