@@ -1,16 +1,17 @@
 class Solution:
     def numSubarraysWithSum(self, nums: list[int], goal: int) -> int:
-        def atmost(k):
-            left=0
-            ans=0
-            add=0
-            if k < 0:
-                return 0
-            for right in range(len(nums)):
-                add+=nums[right]
-                while(add>k):
-                    add-=nums[left]
-                    left+=1
-                ans+=right-left+1
-            return ans
-        return atmost(goal)-atmost(goal-1)
+        prefixSum = 0
+        count = 0
+
+        freq = {0: 1}
+
+        for num in nums:
+            prefixSum += num
+            remaining = prefixSum - goal
+
+            if remaining in freq:  #subarray with sum k found
+                count += freq[remaining]
+
+            freq[prefixSum] = freq.get(prefixSum, 0) + 1
+
+        return count
