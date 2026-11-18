@@ -21,8 +21,9 @@ class Solution:
             shift = running % 26
 
             new_char = chr(
-                (ord(s[i]) - ord('a') + shift) % 26      #convert ord(s[i])Ascii to 0-25 by -ord('a') and add the shift,  do %26 in case {ord(s[i]) - ord('a') + shift} to goes >25
-                + ord('a')    # again convert to ascii by + ord('a')
+                (ord(s[i]) - ord('a')  #convert ord(s[i])Ascii to 0-25 by -ord('a') and
+                + shift) % 26  # add the shift,  do %26 in case: {ord(s[i]) - ord('a') + shift} to goes >25
+                + ord('a')    # again convert to ascii by + ord('a') 
             )
 
             result.append(new_char)
